@@ -1,5 +1,21 @@
 <%- include("./utils/header.ejs") %>
 <main id="main-content" class="main-container">
-    <h2>Content</h2>
+    <h2>Users available</h2>
+    <% users.forEach(user=>{ %>
+        <div class="users">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>Age</th>
+                </tr>
+                <tr>
+                    <td><%= user.username %></td>
+                    <td><%= user.email %></td>
+                    <td><%= user.age %></td>
+                </tr>
+            </table>
+        </div>
+    <% }) %>
 </main>
 <%- include("./utils/footer.ejs") %>
