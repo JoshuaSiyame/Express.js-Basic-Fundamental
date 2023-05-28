@@ -1,14 +1,13 @@
 <%- include("./utils/header.ejs") %>
 <main id="main-content" class="main-container">
         <div id="users">
-            <h2>Users available</h2> 
+            <h2>User</h2> 
             <table>
                 <tr>
                     <th class="table-header">Name</th>
                     <th class="table-header">email</th>
                     <th class="table-header">Age</th>
-                </tr>
-               <% users.forEach(user=>{ %>
+                </tr>               
                 <tr>
                     <td class="table-data">
                         <a href="/user/<%= user._id %>">
@@ -17,8 +16,15 @@
                     </td>
                     <td class="table-data"><%= user.email %></td>
                     <td class="table-data"><%= user.age %></td>
-                </tr>
-                <% }) %>
+                    <td class="table-btns">
+                        <form action="/user/<%= user._id %>" method="post">
+                            <input type="button" value="edit" class="btn-primary-1">
+                        </form>
+                        <form action="/user/<%= user._id %>" method="">
+                            <input type="button" value="delete" class="btn-primary-2">
+                        </form>
+                    </td>
+                </tr>               
             </table>
         </div>
 </main>
