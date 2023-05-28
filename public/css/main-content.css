@@ -73,3 +73,43 @@ main{
     border: 2px solid cornflowerblue;
     border-radius: 3px;
 }
+
+/* table setup */
+#users{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-header{
+    width: 300px;
+    padding: .5em;
+}
+
+.table-data{
+    text-align: center;
+}
+
+/* btns */
+.table-btns{
+    display: flex;
+    gap: .5em;
+}
+
+.btn-primary-1{
+    padding: 1em;
+    color: ghostwhite;
+    background-color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn-primary-2{
+    padding: 1em;
+    color: ghostwhite;
+    background-color: red;
+    border: 2px solid red;
+    border-radius: 3px;
+    cursor: pointer;
+}
