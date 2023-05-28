@@ -1,0 +1,18 @@
+{
+  "name": "express.js-fundamentals",
+  "version": "1.0.0",
+  "description": "A simple node.js app based on express.js framework, covering the basic knowledge that is a must know to get  started making web apps.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "joshcodingenv",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.1",
+    "nodemon": "^2.0.22"
+  }
+}
