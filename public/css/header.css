@@ -1,0 +1,23 @@
+#header{
+    display: flex;
+    background-color: darkslategray;
+}
+
+#main-menu{
+    display: flex;
+}
+
+.nav-item{
+    list-style: none;
+}
+
+.nav-item-link{
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 1em 1em;
+    transition: border .5s ease-in-out;
+}
+
+.nav-item-link:hover{
+    border-bottom: 2px solid salmon;
+}
