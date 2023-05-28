@@ -16,7 +16,7 @@ app.get("/test", function(request, response){
 });
 
 app.get("/", (req, res)=>{
-    res.send("Welcome home, Dev");
+    res.send("Welcome home, Dev ");
 });
 
 // server instance
