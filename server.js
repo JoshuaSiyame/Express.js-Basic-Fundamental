@@ -3,6 +3,9 @@ const express = require("express");
 const http = require("http");
 const mongoose = require("mongoose");
 
+// import routes
+const appRoutes = require("./routes/appRoutes");
+
 // configuring database connection
 mongoose.set("strictQuery", true);
 mongoose.connect("mongodb://127.0.0.1:27017/express-js-basic-fundamentals").then(()=>{
@@ -28,6 +31,9 @@ const app = express();
 // app.get("/", (req, res)=>{
 //     res.send("Welcome home, Dev ");
 // });
+
+// configure app to use routes
+app.use("/", appRoutes);
 
 // server instance
 const server = http.createServer(app);
