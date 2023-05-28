@@ -28,6 +28,10 @@ main{
     color: crimson;
 }
 
+.social-site{
+    font-weight: 500;
+}
+
 .accounts{
     margin: .5em 0;
     font-family: "maven pro";
@@ -38,4 +42,34 @@ main{
 .account-links{
     font-size: 18px;
     margin: .5em 0;
+}
+
+/* form styles */
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-control{
+    padding: 1em 1em;
+    margin: .5em 0;
+    width: 400px;
+    border-radius: 3px;
+    border: 2px solid lightslategray;
+}
+
+.btn-primary{
+    padding: 1em 2em;
+    margin: .5em 0;
+    width: 400px;
+    color: whitesmoke;
+    background-color: cornflowerblue;
+    border: 2px solid cornflowerblue;
+    border-radius: 3px;
 }
