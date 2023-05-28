@@ -1,15 +1,14 @@
 # Express.js Basic Fundamentals, Building web apps.
 Hi there I'm so glad you have made it to my repository 😊. My name is **Josh** and welcome to **express.js basic fundamentals** and **building web apps**.
 
-In this simple project you are going to make a similar app and test the endpoints, If you are stack somewhere or have questions, please leave a comment the respective tutorial video in my [Youtube] Account or a Tweet at my [Twitter] Account.
+In this simple project you are going to make a similar app and test the endpoints, If you are stack somewhere or have questions, please leave a comment in the respective tutorial video in my [Youtube] Account or a Tweet at my [Twitter] Account.
 
 [Youtube]: https://youtube.com/@joshcodingenv
 [Twitter]: https://twitter.com/joshcodingenv
 
 ### Prerequisites or must haves
 - [X] Make sure you have **MongoDB** and **MongoDBCompass** setups are installed in your system and running.
-- [X] API testing env installed **Insomnia**
-**Postman** or 
+- [X] API testing env installed **Insomnia** or 
 **Postman**
 
 ### To get your app running make sure you do the following;
