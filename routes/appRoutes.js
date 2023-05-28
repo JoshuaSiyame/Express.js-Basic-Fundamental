@@ -3,6 +3,8 @@ const express = require("express");
 const User = require("../models/userModel");
 const logger = require("../middlewares/logger");
 
+const title = "Express.js Basics";
+
 // router instance
 const router = express.Router();
 
@@ -12,8 +14,12 @@ router.get("/test",logger, function(request, response){
 });
 
 router.get("/",logger, (req, res)=>{
-    res.status(200).render("home", { title: "Express.js Basics"});
+    res.status(200).render("home", { title });
 });
+
+router.get("/new-user", (req, res)=>{
+    res.status(200).render("form", { title })
+})
 
 router.get("/users",logger, async (req, res)=>{
     // retrieve all users from the database
@@ -24,7 +30,7 @@ router.get("/users",logger, async (req, res)=>{
     if(users.length === 0){
         return res.status(200).send("No users available");
     };
-    res.status(200).render("mainContent", { title:"Express.js Basics", users });
+    res.status(200).render("mainContent", { title, users });
 });
 
 router.get("/user/:userId",logger, async (req, res)=>{
@@ -73,7 +79,8 @@ router.post("/new-user",logger, async (req, res)=>{
     // save the new user to the database
     const savedUser = await newUser.save();
 
-    res.status(201).send("New user saved");
+    // res.status(201).send("New user saved");
+    res.status(201).redirect("/users");
 });
 
 router.put("/user/:userId",logger, async (req, res)=>{
