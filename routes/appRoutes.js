@@ -83,17 +83,6 @@ router.put("/user/:userId",logger, async (req, res)=>{
     // perform object destructuring to get user submitted values in variables
     const { username, email, age } = req.body;
 
-    // data validation
-    if(!username || username.length ===0 || username ===""){
-        return res.status(400).send("Username is required");
-    };
-    if(!email || email.length === 0 || email ===""){
-        return res.status(400).send("Email is required");
-    };
-    if(!age || age.length === 0 || age ===""){
-        return res.status(400).send("Age is required");
-    };
-
     // user update object
     const userUpdates = {
         username, email, age
