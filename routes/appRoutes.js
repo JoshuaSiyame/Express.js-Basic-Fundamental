@@ -12,7 +12,7 @@ router.get("/test",logger, function(request, response){
 });
 
 router.get("/",logger, (req, res)=>{
-    res.status(200).send("Welcome home, Dev");
+    res.status(200).render("mainContent", { title: "Express.js Basics"});
 });
 
 router.get("/users",logger, async (req, res)=>{
