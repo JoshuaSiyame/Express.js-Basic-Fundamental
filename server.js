@@ -3,7 +3,6 @@ const express = require("express");
 const http = require("http");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const logger = require("./middlewares/logger");
 
 // import routes
 const appRoutes = require("./routes/appRoutes");
@@ -23,7 +22,6 @@ const port = 3000;
 const app = express();
 
 // app configurations
-app.use(logger());
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 
