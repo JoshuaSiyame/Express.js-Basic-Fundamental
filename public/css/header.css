@@ -1,10 +1,20 @@
 #header{
     display: flex;
     background-color: darkslategray;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
-#main-menu{
+.main-menu{
     display: flex;
+}
+
+.logo{
+    color: whitesmoke;
+    font-size: 28px;
+    font-family: "exo 2";
 }
 
 .nav-item{
@@ -15,7 +25,7 @@
     color: whitesmoke;
     text-decoration: none;
     padding: 1em 1em;
-    transition: border .5s ease-in-out;
+    transition: border .3s ease-in;
 }
 
 .nav-item-link:hover{
