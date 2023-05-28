@@ -11,7 +11,7 @@ router.get("/test", function(request, response){
 });
 
 router.get("/", (req, res)=>{
-    res.status("Welcome home, Dev");
+    res.status(200).send("Welcome home, Dev");
 });
 
 router.get("/users", async (req, res)=>{
