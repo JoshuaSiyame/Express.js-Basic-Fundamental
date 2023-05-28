@@ -14,24 +14,9 @@ router.get("/test",logger, function(request, response){
 });
 
 router.get("/",logger, (req, res)=>{
-    res.status(200).render("home", { title });
+    res.status(200).send("Welcome home, Dev");
 });
 
-router.get("/new-user", (req, res)=>{
-    res.status(200).render("form", { title })
-})
-
-router.get("/users",logger, async (req, res)=>{
-    // retrieve all users from the database
-    const users = await User.find({});
-    if(!users){
-        return res.status(500).send("Something broke, Failed to get users");
-    };
-    if(users.length === 0){
-        return res.status(200).send("No users available");
-    };
-    res.status(200).render("mainContent", { title, users });
-});
 
 router.get("/user/:userId",logger, async (req, res)=>{
     // get requested userId
@@ -43,6 +28,18 @@ router.get("/user/:userId",logger, async (req, res)=>{
         return res.status(500).send("Failed to get user");
     };
     res.status(200).json({ user });
+});
+
+router.get("/users",logger, async (req, res)=>{
+    // retrieve all users from the database
+    const users = await User.find({});
+    if(!users){
+        return res.status(500).send("Something broke, Failed to get users");
+    };
+    if(users.length === 0){
+        return res.status(200).send("No users available");
+    };
+    res.status(200).json({ users });
 });
 
 router.post("/new-user",logger, async (req, res)=>{
@@ -80,10 +77,10 @@ router.post("/new-user",logger, async (req, res)=>{
     const savedUser = await newUser.save();
 
     // res.status(201).send("New user saved");
-    res.status(201).redirect("/users");
+    res.status(201).json("New user created");
 });
 
-router.put("/user/:userId",logger, async (req, res)=>{
+router.put("/edit/user/:userId",logger, async (req, res)=>{
     // get requested userId
     const userId = req.params.userId;
 
@@ -107,7 +104,7 @@ router.put("/user/:userId",logger, async (req, res)=>{
     res.status(201).send("User has been updated");
 });
 
-router.delete("/user/:userId",logger, async (req, res)=>{
+router.delete("/delete/user/:userId",logger, async (req, res)=>{
     // get requested user id
     const userId = req.params.userId;
 

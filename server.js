@@ -3,7 +3,6 @@ const express = require("express");
 const http = require("http");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const path = require("path");
 
 // import routes
 const appRoutes = require("./routes/appRoutes");
@@ -21,13 +20,6 @@ const port = 3000;
 
 // app instance
 const app = express();
-
-// configure template engine and static files for the app
-app.set("view engine", "ejs");
-app.set("views", path.resolve(__dirname, "views"));
-
-/* Note the /public prefix, if you include it in your html code any static url, should start with /public... */
-app.use("/public", express.static(path.resolve(__dirname, "public")));
 
 // app configurations
 app.use(bodyParser.urlencoded({extended: false }));
