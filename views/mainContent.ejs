@@ -1,7 +1,6 @@
 <%- include("./utils/header.ejs") %>
 <main id="main-content" class="main-container">
-    <h2>Users available</h2>
-    <% users.forEach(user=>{ %>
+    <h2>Users available</h2>    
         <div class="users">
             <table>
                 <tr>
@@ -9,13 +8,14 @@
                     <th>email</th>
                     <th>Age</th>
                 </tr>
+               <% users.forEach(user=>{ %>
                 <tr>
                     <td><%= user.username %></td>
                     <td><%= user.email %></td>
                     <td><%= user.age %></td>
                 </tr>
+                <% }) %>
             </table>
         </div>
-    <% }) %>
 </main>
 <%- include("./utils/footer.ejs") %>
