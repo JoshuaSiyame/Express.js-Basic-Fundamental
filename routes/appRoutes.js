@@ -112,6 +112,8 @@ router.delete("/user/:userId",logger, async (req, res)=>{
 
     // delete user if exists
     const deletedUser = await User.findByIdAndDelete(userId);
+
+    res.status(200).send("User deleted");
 });
 
 // export router instance
