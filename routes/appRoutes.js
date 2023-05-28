@@ -12,7 +12,7 @@ router.get("/test",logger, function(request, response){
 });
 
 router.get("/",logger, (req, res)=>{
-    res.status(200).render("mainContent", { title: "Express.js Basics"});
+    res.status(200).render("home", { title: "Express.js Basics"});
 });
 
 router.get("/users",logger, async (req, res)=>{
@@ -24,7 +24,7 @@ router.get("/users",logger, async (req, res)=>{
     if(users.length === 0){
         return res.status(200).send("No users available");
     };
-    res.status(200).json({ users });
+    res.status(200).render("mainContent", { title:"Express.js Basics", users });
 });
 
 router.get("/user/:userId",logger, async (req, res)=>{
