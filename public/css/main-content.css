@@ -1,0 +1,41 @@
+main{
+    font-family: "maven pro";
+}
+
+#welcome-text{
+    text-align: center;
+    margin-top: 4em;
+}
+
+.welcome-header{
+    font-size: 32px;
+    font-weight: 600;
+    margin: .5em 0;
+}
+
+.welcome-msg{
+    margin: .5em 0;
+    font-size: 24px;
+}
+
+.welcome-msg-links{
+    margin: .5em 0;
+}
+
+.welcome-msg-links-header{
+    font-size: 22px;
+    font-weight: 500;
+    color: crimson;
+}
+
+.accounts{
+    margin: .5em 0;
+    font-family: "maven pro";
+    display: flex;
+    flex-direction: column;
+}
+
+.account-links{
+    font-size: 18px;
+    margin: .5em 0;
+}

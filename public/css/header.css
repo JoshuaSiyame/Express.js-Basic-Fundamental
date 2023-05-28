@@ -24,6 +24,7 @@
 .nav-item-link{
     color: whitesmoke;
     text-decoration: none;
+    font-family: "maven pro";
     padding: 1em 1em;
     transition: border .3s ease-in;
 }
