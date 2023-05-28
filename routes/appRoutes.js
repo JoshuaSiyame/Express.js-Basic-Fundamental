@@ -1,20 +1,21 @@
 // import required modules/packages
 const express = require("express");
 const User = require("../models/userModel");
+const logger = require("../middlewares/logger");
 
 // router instance
 const router = express.Router();
 
 // app endpoints
-router.get("/test", function(request, response){
+router.get("/test",logger, function(request, response){
     response.status(200).send("Test route working");
 });
 
-router.get("/", (req, res)=>{
+router.get("/",logger, (req, res)=>{
     res.status(200).send("Welcome home, Dev");
 });
 
-router.get("/users", async (req, res)=>{
+router.get("/users",logger, async (req, res)=>{
     // retrieve all users from the database
     const users = await User.find({});
     if(!users){
@@ -26,7 +27,7 @@ router.get("/users", async (req, res)=>{
     res.status(200).json({ users });
 });
 
-router.get("/user/:userId", async (req, res)=>{
+router.get("/user/:userId",logger, async (req, res)=>{
     // get requested userId
     const userId = req.params.userId;
 
@@ -38,7 +39,7 @@ router.get("/user/:userId", async (req, res)=>{
     res.status(200).json({ user });
 });
 
-router.post("/new-user", async (req, res)=>{
+router.post("/new-user",logger, async (req, res)=>{
     // perform object destructuring to obtain values in variables submitted by user
     const { username, email, age } = req.body;
 
@@ -75,7 +76,7 @@ router.post("/new-user", async (req, res)=>{
     res.status(201).send("New user saved");
 });
 
-router.put("/user/:userId", async (req, res)=>{
+router.put("/user/:userId",logger, async (req, res)=>{
     // get requested userId
     const userId = req.params.userId;
 
@@ -110,7 +111,7 @@ router.put("/user/:userId", async (req, res)=>{
     res.status(201).send("User has been updated");
 });
 
-router.delete("/user/:userId", async (req, res)=>{
+router.delete("/user/:userId",logger, async (req, res)=>{
     // get requested user id
     const userId = req.params.userId;
 
